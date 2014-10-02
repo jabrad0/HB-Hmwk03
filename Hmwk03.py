@@ -13,7 +13,8 @@ def print_melon_tallies(filename, melon_tallies):
         revenue = price * melon_tallies[melon_type]
         total_revenue += revenue
         
-        print "We sold %d %s melons at %0.2f each for a total of %0.2f" % (melon_tallies[melon_type], melon_type, price, revenue)
+        statement = "We sold %d %s melons at %0.2f each for a total of %0.2f" % (melon_tallies[melon_type], melon_type, price, revenue)
+        actual_print(statement, False)
     
 def print_sales(filename):
     f = open(filename)
@@ -35,6 +36,11 @@ def print_sales(filename):
         print "Time to fire the sales team! Online sales rule all!"
     print "******************************************"
 
+def actual_print(statement, upper):
+    if upper == True:
+        print statement.upper()
+    else:
+        print statement    
 
 def main():
     print "******************************************"
